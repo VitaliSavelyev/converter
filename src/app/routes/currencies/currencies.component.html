@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="currencies">
+      <p-button label="Clear" (click)="clearTable()" [disabled]="loading"></p-button>
+      <div class="p-field p-col-12 p-md-4">
+        <p-calendar [formControl]="control"
+                    [showIcon]="true"
+                    inputId="icon"
+                    dateFormat="yy-mm-dd"
+                    [maxDate]="maxDateValue" [disabled]="loading"></p-calendar>
+      </div>
+    </div>
+  <ng-container >
+    <app-table *ngIf="isShowTable; else emptyState" [rates]="rates"></app-table>
+  </ng-container>
+  <ng-template #emptyState>
+    <div class="currencies-empty">
+      <ng-container *ngIf="isClearTable && !loading">
+        <div class="currencies-empty_block">Table was cleared</div>
+      </ng-container>
+      <ng-container *ngIf="isError && !loading">
+        <div class="currencies-empty_block">You got error while loading try again</div>
+      </ng-container>
+      <ng-container *ngIf="loading ">
+        <div class="currencies-empty_block">loading</div>
+      </ng-container>
+    </div>
+  </ng-template>
+</div>

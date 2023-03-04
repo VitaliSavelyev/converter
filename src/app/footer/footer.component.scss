@@ -1,0 +1,31 @@
+@import '../../styles/variables.scss';
+
+.footer__buttom {
+  height: 5rem;
+  max-width: 1110px;
+  width: 100%;
+  padding: 1rem;
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+
+  &_switch-theme {
+    margin-left: 1rem;
+    .text {
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    .switch {
+      padding: 0.25rem;
+      border: 1px solid $white;
+      background-color: $gray;
+      border-radius: 4px;
+    }
+  }
+
+  &_name {
+    cursor: pointer;
+  }
+}
